@@ -1,0 +1,8 @@
+{
+    "data_dir": "your_data.pkl",
+    "batch_size": 32,
+    "epochs": 1000,
+    "patience": 50,
+    "learning_rate": 0.0001,
+    "output_dir": "outputs"
+}

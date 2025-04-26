@@ -1,35 +1,27 @@
-import torch
-from torch.utils.data import DataLoader
-from model import PrecipTransformer
-from train import train_model
-from evaluate import predict, evaluate_predictions
-from dataset import get_datasets
-import json
 import os
+import torch
+import json
+
+from src.models.transformer import PrecipTransformer
+from src.training.train import train_model
+from src.training.losses import custom_loss_fn
+from src.data.dataset import get_datasets
+from src.evaluation.evaluate import evaluate_predictions, predict
 
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    config = json.load(open("config.json"))
+
+    with open("src/config/config.json", "r") as f:
+        config = json.load(f)
+
     os.makedirs(config["output_dir"], exist_ok=True)
 
     train_loader, test_loader, input_dim = get_datasets(config)
 
-    model = PrecipTransformer(input_dim)
+    model = PrecipTransformer(input_dim=input_dim)
     optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"])
-
-    loss_fn = lambda pred, target: (
-        0.6
-        * (
-            1
-            - (
-                1
-                - torch.sum((target - pred) ** 2)
-                / (torch.sum((target - torch.mean(target)) ** 2) + 1e-8)
-            )
-        )
-        + 0.4 * torch.mean((pred - target) ** 2)
-    )
+    loss_fn = custom_loss_fn
 
     train_model(
         model,
@@ -47,10 +39,7 @@ def main():
     )
     y_true, y_pred = predict(model.to("cpu"), test_loader)
     evaluate_predictions(
-        y_true,
-        y_pred,
-        title="Transformer Model Performance",
-        output_dir=config["output_dir"],
+        y_true, y_pred, title="Downformer Performance", output_dir=config["output_dir"]
     )
 
 

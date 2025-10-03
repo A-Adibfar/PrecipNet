@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/com/your-username/PrecipNet.svg?style=flat-square)](https://travis-ci.com/your-username/PrecipNet)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-(PrecipNet](https://doi.org/10.1016/j.ejrh.2025.102738) is a transformer-based deep learning framework for high-resolution precipitation prediction. This repository contains the official implementation for the paper, **"PrecipNet: A transformer-based downscaling framework for improved precipitation prediction in San Diego County."**
+PrecipNet (https://doi.org/10.1016/j.ejrh.2025.102738) is a transformer-based deep learning framework for high-resolution precipitation prediction. This repository contains the official implementation for the paper, **"PrecipNet: A transformer-based downscaling framework for improved precipitation prediction in San Diego County."**
 
 The model leverages a transformer architecture to perform statistical downscaling, translating coarse meteorological data into fine-grained, accurate precipitation forecasts.
 

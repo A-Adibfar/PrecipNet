@@ -1,7 +1,7 @@
 
 # Precipitation Prediction Transformer
 
-A transformer-based deep learning model to predict precipitation using meteorological data.
+PrecipNet is a transformer-based deep learning model to predict precipitation using meteorological data.
 
 ## Project Structure
 - `main.py` — Run this file to train and evaluate the model.

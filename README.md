@@ -11,10 +11,6 @@ PrecipNet is a transformer-based deep learning model to predict precipitation us
 - `dataset.py` — Prepares the data loaders.
 - `config.json` — Configuration file.
 
-## Instructions
-```bash
-pip install -r requirements.txt
-python main.py
 
 ## Citation
 @article{adibfar2025precipnet,
@@ -26,3 +22,9 @@ python main.py
   year      = {2025},
   month     = {dec}
 }
+
+## Instructions
+```bash
+pip install -r requirements.txt
+python main.py
+

@@ -15,3 +15,14 @@ PrecipNet is a transformer-based deep learning model to predict precipitation us
 ```bash
 pip install -r requirements.txt
 python main.py
+
+## Citation
+@article{adibfar2025precipnet,
+  title     = {PrecipNet: A transformer-based downscaling framework for improved precipitation prediction in San Diego County},
+  author    = {AmirHossein Adibfar and Hassan Davani},
+  journal   = {Journal of Hydrology: Regional Studies},
+  volume    = {62},
+  pages     = {102738},
+  year      = {2025},
+  month     = {dec}
+}
